@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "jsx": "react-native",
+        "strict": true,
+        "paths": {
+            "@ares/utils": [
+                "../../packages/utils/src"
+            ]
+        }
+    },
+    "include": [
+        "app",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

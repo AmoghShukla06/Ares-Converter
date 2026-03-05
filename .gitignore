@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+.turbo/
+*.log
+.DS_Store
+*.local
+.env
+.env.*
+target/
+*.rs.bk
+src-tauri/target/
+android/
+ios/
+.expo/

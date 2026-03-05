@@ -1,0 +1,32 @@
+{
+    "name": "ares-converter",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Privacy-first universal file converter — all processing happens locally on your device",
+    "scripts": {
+        "dev:web": "pnpm --filter @ares/web dev",
+        "dev:desktop": "pnpm --filter @ares/desktop dev",
+        "dev:mobile": "pnpm --filter @ares/mobile start",
+        "build:web": "pnpm --filter @ares/web build",
+        "build:desktop": "pnpm --filter @ares/desktop build",
+        "build:mobile:android": "pnpm --filter @ares/mobile build:android",
+        "build:windows": "pnpm --filter @ares/desktop build:windows",
+        "build:linux": "pnpm --filter @ares/desktop build:linux",
+        "build:macos": "pnpm --filter @ares/desktop build:macos",
+        "lint": "eslint . --ext .ts,.tsx",
+        "format": "prettier --write .",
+        "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules apps/*/dist packages/*/dist"
+    },
+    "keywords": [
+        "file-converter",
+        "privacy",
+        "offline",
+        "foss",
+        "wasm"
+    ],
+    "license": "MIT",
+    "engines": {
+        "node": ">=18",
+        "pnpm": ">=8"
+    }
+}

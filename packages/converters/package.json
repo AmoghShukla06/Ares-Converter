@@ -1,0 +1,25 @@
+{
+    "name": "@ares/converters",
+    "version": "1.0.0",
+    "private": true,
+    "main": "./src/index.ts",
+    "types": "./src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch"
+    },
+    "dependencies": {
+        "@ares/utils": "workspace:*",
+        "@ffmpeg/core": "^0.12.10",
+        "@ffmpeg/ffmpeg": "^0.12.15",
+        "@ffmpeg/util": "^0.12.2",
+        "epubjs": "^0.3.93",
+        "fflate": "^0.8.2",
+        "jszip": "^3.10.1",
+        "pdf-lib": "^1.17.1",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "typescript": "^5.4.0"
+    }
+}

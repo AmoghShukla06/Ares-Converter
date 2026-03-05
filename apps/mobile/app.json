@@ -1,0 +1,33 @@
+{
+    "expo": {
+        "name": "Ares Converter",
+        "slug": "ares-converter",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "userInterfaceStyle": "automatic",
+        "scheme": "ares-converter",
+        "splash": {
+            "backgroundColor": "#09090b"
+        },
+        "assetBundlePatterns": [
+            "**/*"
+        ],
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.ares.converter"
+        },
+        "android": {
+            "adaptiveIcon": {
+                "backgroundColor": "#09090b"
+            },
+            "package": "com.ares.converter"
+        },
+        "plugins": [
+            "expo-router",
+            "expo-file-system",
+            "expo-sharing",
+            "expo-document-picker"
+        ]
+    }
+}

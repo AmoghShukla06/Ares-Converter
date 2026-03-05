@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #121215;
+  --color-bg-tertiary: #1a1a1f;
+  --color-bg-elevated: #1e1e24;
+  --color-bg-hover: #252530;
+  --color-border-primary: #27272a;
+  --color-border-secondary: #3f3f46;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #71717a;
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-accent-subtle: #6366f11a;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-gradient-start: #6366f1;
+  --color-gradient-end: #8b5cf6;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Light theme overrides ───────────────────────────────────── */
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f4f4f5;
+  --color-bg-tertiary: #e4e4e7;
+  --color-bg-elevated: #ffffff;
+  --color-bg-hover: #f4f4f5;
+  --color-border-primary: #e4e4e7;
+  --color-border-secondary: #d4d4d8;
+  --color-text-primary: #09090b;
+  --color-text-secondary: #52525b;
+  --color-text-tertiary: #71717a;
+  --color-accent-subtle: #6366f115;
+}
+
+/* Base reset removed, let Tailwind handle it to prevent layer specificity issues */
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Scrollbar styling ──────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* ─── Animated gradient background ───────────────────────────── */
+.gradient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.gradient-bg::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: radial-gradient(ellipse at 20% 50%,
+      rgba(99, 102, 241, 0.08) 0%,
+      transparent 50%),
+    radial-gradient(ellipse at 80% 50%,
+      rgba(139, 92, 246, 0.06) 0%,
+      transparent 50%),
+    radial-gradient(ellipse at 50% 80%,
+      rgba(99, 102, 241, 0.04) 0%,
+      transparent 50%);
+  animation: gradient-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(2%, -2%) rotate(3deg);
+  }
+}
+
+/* ─── Drop zone animation ────────────────────────────────────── */
+.drop-zone-active {
+  border-color: var(--color-accent) !important;
+  background: var(--color-accent-subtle) !important;
+}
+
+.drop-zone-active .drop-icon {
+  transform: scale(1.1);
+}
+
+/* ─── Glassmorphism card ─────────────────────────────────────── */
+.glass-card {
+  background: color-mix(in srgb, var(--color-bg-secondary) 60%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-primary);
+}
+
+/* ─── Format badge ───────────────────────────────────────────── */
+.format-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.format-badge.video {
+  background: #6366f120;
+  color: #818cf8;
+}
+
+.format-badge.audio {
+  background: #22c55e20;
+  color: #4ade80;
+}
+
+.format-badge.image {
+  background: #f59e0b20;
+  color: #fbbf24;
+}
+
+.format-badge.document {
+  background: #3b82f620;
+  color: #60a5fa;
+}
+
+.format-badge.archive {
+  background: #ef444420;
+  color: #f87171;
+}
+
+.format-badge.subtitle {
+  background: #a855f720;
+  color: #c084fc;
+}
+
+.format-badge.presentation {
+  background: #f9731620;
+  color: #fb923c;
+}
+
+.format-badge.spreadsheet {
+  background: #14b8a620;
+  color: #2dd4bf;
+}
+
+.format-badge.ebook {
+  background: #ec489920;
+  color: #f472b6;
+}
+
+.format-badge.unknown {
+  background: #71717a20;
+  color: #a1a1aa;
+}
